@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    "/*": ["./dev.db"],
+    "/crud": ["./dev.db", "./prisma/dev.db"],
+    "/crud/**": ["./dev.db", "./prisma/dev.db"],
   },
 };
 
