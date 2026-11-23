@@ -1,69 +1,60 @@
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 import Image from "next/image";
-import styles from "./page.module.css";
+import Herosection from "../component/Herosection";
+import Worksection from "../component/Worksection";
+import Servicesection from "../component/Servicesection";
+import Contactsection from "../component/Contactsection";
+import Footer from "../component/Footer";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main>
+      {/* Menampilkan bagian Hero Section */}
+      <Herosection />
+
+      {/* Menampilkan bagian About Us */}
+      <Container className="my-5">
+        <Row className="my-4">
+          <Col md={6} className="align-self-center mb-3">
+            <h2>About Us</h2>
+            <h6>What We Do?</h6>
+
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Fugiat, ipsam culpa. Commodi aspernatur temporibus placeat
+              libero fugit at sequi consequuntur.
+            </p>
+
+            <Button variant="info">
+              Learn More
+            </Button>
+          </Col>
+          <Col md={6}>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/seven.jpg"
+              alt="seven"
+              width={500}
+              height={500}
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </Col>
+        </Row>
+      </Container>
+      
+      <section className="py-4" style={{ backgroundColor: "#fff9ac" }}>
+        <Worksection />
+      </section>
+
+      {/* Menampilkan bagian Service Section */}
+      <Servicesection />
+
+      {/* Menampilkan bagian Contact Section */}
+      <Contactsection />
+
+      {/* Menampilkan bagian Footer */}
+      <Footer />
+    </main>
   );
 }
