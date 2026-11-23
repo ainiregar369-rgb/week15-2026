@@ -5,11 +5,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Image from "next/image";
-import Herosection from "../component/Herosection";
-import Worksection from "../component/Worksection";
-import Servicesection from "../component/Servicesection";
-import Contactsection from "../component/Contactsection";
-import Footer from "../component/Footer";
+import Herosection from "./component/Herosection";
+import Worksection from "./component/Worksection";
+import Servicesection from "./component/Servicesection";
+import Contactsection from "./component/Contactsection";
+import Footer from "./component/Footer";
 
 export default function Home() {
   return (
