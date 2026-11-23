@@ -19,12 +19,15 @@ async function TabelProduk() {
 
     if (!id || !nama || !kategori || Number.isNaN(harga)) return;
 
-    await prisma.item.update({
-      where: { id },
-      data: { nama, kategori, harga },
-    });
-
-    revalidatePath("/crud");
+    try {
+      await prisma.item.update({
+        where: { id },
+        data: { nama, kategori, harga },
+      });
+      revalidatePath("/crud");
+    } catch (err) {
+      console.error("Gagal memperbarui data SQLite:", err);
+    }
   }
 
   async function deleteItem(formData: FormData) {
@@ -32,11 +35,14 @@ async function TabelProduk() {
     const id = Number(formData.get("id"));
     if (!id) return;
 
-    await prisma.item.delete({
-      where: { id },
-    });
-
-    revalidatePath("/crud");
+    try {
+      await prisma.item.delete({
+        where: { id },
+      });
+      revalidatePath("/crud");
+    } catch (err) {
+      console.error("Gagal menghapus data SQLite:", err);
+    }
   }
 
   return (
@@ -112,11 +118,14 @@ export default function CrudPage() {
 
     if (!nama || !kategori || Number.isNaN(harga)) return;
 
-    await prisma.item.create({
-      data: { nama, kategori, harga },
-    });
-
-    revalidatePath("/crud");
+    try {
+      await prisma.item.create({
+        data: { nama, kategori, harga },
+      });
+      revalidatePath("/crud");
+    } catch (err) {
+      console.error("Gagal menambah data SQLite:", err);
+    }
   }
 
   return (
