@@ -12,7 +12,9 @@
     "@emotion/style": "^0.8.0",
     "@mui/material": "^9.5.0",
     "@mui/styled-engine-sc": "^9.5.0",
+    "@prisma/adapter-better-sqlite3": "^7.10.1",
     "@prisma/client": "^7.10.1",
+    "better-sqlite3": "^13.2.0",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.2",
     "next": "16.4.3",
@@ -23,6 +25,7 @@
     "styled-components": "^6.6.0"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
