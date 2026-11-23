@@ -1,3 +1,5 @@
+"use client";
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,10 +14,8 @@ import Footer from "../component/Footer";
 export default function Home() {
   return (
     <main>
-      {/* Menampilkan bagian Hero Section */}
       <Herosection />
 
-      {/* Menampilkan bagian About Us */}
       <Container className="my-5">
         <Row className="my-4">
           <Col md={6} className="align-self-center mb-3">
@@ -42,18 +42,13 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
-      
+
       <section className="py-4" style={{ backgroundColor: "#fff9ac" }}>
         <Worksection />
       </section>
 
-      {/* Menampilkan bagian Service Section */}
       <Servicesection />
-
-      {/* Menampilkan bagian Contact Section */}
       <Contactsection />
-
-      {/* Menampilkan bagian Footer */}
       <Footer />
     </main>
   );
